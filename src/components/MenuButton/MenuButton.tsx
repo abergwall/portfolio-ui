@@ -5,7 +5,7 @@ import { IconStyleProps, MenuButtonStyleProps } from "./MenuButton.types";
 import { iconStyles, menuButtonStyles } from "./MenuButton.styles";
 import { Card } from "../Card";
 
-const StyledDiv = styled.button<MenuButtonStyleProps>`
+const StyledButton = styled.button<MenuButtonStyleProps>`
   ${menuButtonStyles}
 `;
 
@@ -13,11 +13,19 @@ const StyledIcon = styled(AiOutlineMenu)<IconStyleProps>`
   ${iconStyles}
 `;
 
+const StyledDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+`;
+
 const vibrateOnClick = () => {
   if (!window || !window.navigator || !window.navigator.vibrate) {
     return;
   }
-  window.navigator.vibrate(500);
+  window.navigator.vibrate(100);
 };
 
 export const MenuButton: React.FC = () => {
@@ -27,11 +35,11 @@ export const MenuButton: React.FC = () => {
     setMenuToggled(!menuToggled);
   };
   return (
-    <>
-      <StyledDiv onClick={onClick} $toggled={menuToggled}>
+    <StyledDiv>
+      <StyledButton onClick={onClick} $toggled={menuToggled}>
         <StyledIcon size={30} $toggled={menuToggled} />
-      </StyledDiv>
+      </StyledButton>
       {menuToggled && <Card>Hello</Card>}
-    </>
+    </StyledDiv>
   );
 };

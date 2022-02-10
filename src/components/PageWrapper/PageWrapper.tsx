@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { PageWrapperProps } from "./PageWrapper.types";
 
 const StyledDiv = styled.div`
-  min-height: 100vh;
+  min-height: 300vh;
   background-color: #051821;
   display: flex;
   flex-direction: column;
