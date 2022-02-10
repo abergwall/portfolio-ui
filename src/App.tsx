@@ -10,9 +10,7 @@ function App() {
       <PageWrapper>
         <MenuButton />
         <Container>
-          <Card>
-            <p>Anton Bergwall</p>
-          </Card>
+          <Card></Card>
         </Container>
       </PageWrapper>
     </>

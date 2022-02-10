@@ -10,6 +10,7 @@ background-color: #266867;
 
 margin: 15px 0px 0px 15px;
 
+outline: none;
 border: none;
 border-radius 999em;
 
@@ -21,7 +22,7 @@ cursor: pointer;
 
 transition: width 1000ms;
 
-${(p) => p.$toggled && ` width: 20vh`};
+${(p) => p.$toggled && ` width: 20vh;`};
 `;
 
 export const iconStyles = css<IconStyleProps>`

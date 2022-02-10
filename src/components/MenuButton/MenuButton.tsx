@@ -25,7 +25,7 @@ const vibrateOnClick = () => {
   if (!window || !window.navigator || !window.navigator.vibrate) {
     return;
   }
-  window.navigator.vibrate(100);
+  window.navigator.vibrate(20);
 };
 
 export const MenuButton: React.FC = () => {

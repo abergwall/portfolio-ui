@@ -41,7 +41,6 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
           </Row>
           <Row>
             <AiFillGithub />
-            https://github.com/abergwall
           </Row>
           <FaDiscord />
         </Container>
