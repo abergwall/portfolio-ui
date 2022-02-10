@@ -25,7 +25,7 @@ const vibrateOnClick = () => {
   if (!window || !window.navigator || !window.navigator.vibrate) {
     return;
   }
-  window.navigator.vibrate(20);
+  window.navigator.vibrate(10);
 };
 
 export const MenuButton: React.FC = () => {
@@ -39,7 +39,7 @@ export const MenuButton: React.FC = () => {
       <StyledButton onClick={onClick} $toggled={menuToggled}>
         <StyledIcon size={30} $toggled={menuToggled} />
       </StyledButton>
-      {menuToggled && <Card>Hello</Card>}
+      {menuToggled && <Card />}
     </StyledDiv>
   );
 };

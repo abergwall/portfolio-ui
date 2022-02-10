@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Container, Row } from "../LayoutComponents";
+import { Row } from "../LayoutComponents";
 import { AiFillLinkedin } from "react-icons/ai";
 import { AiFillGithub } from "react-icons/ai";
 import { FaDiscord } from "react-icons/fa";
@@ -11,6 +11,10 @@ const StyledDiv = styled.div`
   height: 200px;
   border-radius: 40px;
   border: #F58800;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   font-size: 14px;
   border-style: solid;
   box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25),
@@ -33,17 +37,14 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
   ({ children }, ref) => {
     return (
       <StyledDiv ref={ref}>
-        <Container>
-          {children}
-          <Row>
-            <AiFillLinkedin />
-            hello
-          </Row>
-          <Row>
-            <AiFillGithub />
-          </Row>
-          <FaDiscord />
-        </Container>
+        {children}
+        <Row>
+          <AiFillLinkedin />
+        </Row>
+        <Row>
+          <AiFillGithub />
+        </Row>
+        <FaDiscord />
       </StyledDiv>
     );
   }

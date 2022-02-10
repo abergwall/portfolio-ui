@@ -22,6 +22,7 @@ cursor: pointer;
 
 transition: width 1000ms;
 
+
 ${(p) => p.$toggled && ` width: 20vh;`};
 `;
 
