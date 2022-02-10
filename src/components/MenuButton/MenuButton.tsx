@@ -13,9 +13,17 @@ const StyledIcon = styled(AiOutlineMenu)<IconStyleProps>`
   ${iconStyles}
 `;
 
+const vibrateOnClick = () => {
+  if (!window || !window.navigator || !window.navigator.vibrate) {
+    return;
+  }
+  window.navigator.vibrate(100);
+};
+
 export const MenuButton: React.FC = () => {
   const [menuToggled, setMenuToggled] = useState<boolean>(false);
   const onClick = () => {
+    vibrateOnClick();
     setMenuToggled(!menuToggled);
   };
   return (
