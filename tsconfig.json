@@ -15,5 +15,5 @@
     "allowSyntheticDefaultImports": true,
     "emitDeclarationOnly": true
   },
-  "include": ["src", "index.d.ts"]
+  "include": ["src", "module.d.ts"]
 }
