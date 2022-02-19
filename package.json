@@ -3,7 +3,7 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/abergwall"
   },
-  "version": "0.0.4",
+  "version": "0.0.5",
   "scripts": {
     "rollup": "rollup -c",
     "storybook": "start-storybook -p 6006 -s public",
