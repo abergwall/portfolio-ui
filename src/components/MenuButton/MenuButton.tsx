@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { AiOutlineMenu } from "react-icons/ai";
 import { IconStyleProps, MenuButtonStyleProps } from "./MenuButton.types";
 import { iconStyles, menuButtonStyles } from "./MenuButton.styles";
-import { Card } from "../Card";
 
 const StyledButton = styled.button<MenuButtonStyleProps>`
   ${menuButtonStyles}
@@ -14,11 +13,11 @@ const StyledIcon = styled(AiOutlineMenu)<IconStyleProps>`
 `;
 
 const StyledDiv = styled.div`
-  display: flex;
-  flex-direction: column;
   top: 0;
   position: -webkit-sticky; /* Safari */
   position: sticky;
+  display: flex;
+  flex-direction: column;
 `;
 
 const vibrateOnClick = () => {
@@ -39,7 +38,6 @@ export const MenuButton: React.FC = () => {
       <StyledButton onClick={onClick} $toggled={menuToggled}>
         <StyledIcon size={30} $toggled={menuToggled} />
       </StyledButton>
-      {menuToggled && <Card />}
     </StyledDiv>
   );
 };

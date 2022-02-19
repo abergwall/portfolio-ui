@@ -8,26 +8,26 @@ height: 50px;
 color: #FFFFFF;
 background-color: #266867;
 
-margin: 15px 0px 0px 15px;
-
 outline: none;
 border: none;
 border-radius 999em;
 
-display:flex;
-justify-content:flex-end;
+display: flex;
 align-items: center;
-
+justify-content: center;
+flex-direction: column;
 cursor: pointer;
 
-transition: width 1000ms;
+transition: width 400ms;
 
-
-${(p) => p.$toggled && ` width: 20vh;`};
+${(p) => p.$toggled && ` width: 150px;`};
 `;
 
 export const iconStyles = css<IconStyleProps>`
-  transition: transform 400ms, right 1000ms ease-in-out;
-  margin: 4px;
-  ${(p) => p.$toggled && `transform: rotate(360deg)`};
+  transition: transform 400ms;
+  position: absolute;
+  ${(p) =>
+    p.$toggled &&
+    `transform: translate(150%) rotate(720deg) ;
+  `};
 `;
