@@ -14,6 +14,4 @@ const Template: ComponentStory<typeof RoundImage> = (args) => (
 
 export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-Primary.args = {
-  height: 300,
-};
+Primary.args = {};

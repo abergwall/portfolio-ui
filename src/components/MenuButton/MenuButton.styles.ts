@@ -2,11 +2,11 @@ import { css } from "styled-components";
 import { IconStyleProps, MenuButtonStyleProps } from "./MenuButton.types";
 
 export const menuButtonStyles = css<MenuButtonStyleProps>`
-width: 50px;
-height: 50px;
+width: ${(parameter) => parameter.$width}px;
+height: ${(parameter) => parameter.$height}px;
 
 color: #FFFFFF;
-background-color: #266867;
+background-color: ${(parameter) => parameter.$backgroundColor} ;
 
 outline: none;
 border: none;
@@ -30,4 +30,17 @@ export const iconStyles = css<IconStyleProps>`
     p.$toggled &&
     `transform: translate(150%) rotate(720deg) ;
   `};
+`;
+
+export const stickyContainerStyles = css<{ $isSticky: boolean }>`
+  ${(parameter) =>
+    parameter.$isSticky
+      ? `
+    top: 0;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+`
+      : ``}
 `;
