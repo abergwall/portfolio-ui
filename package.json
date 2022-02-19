@@ -1,5 +1,5 @@
 {
-  "name": "@aberwall/natlon-ui",
+  "name": "@abergwall/natlon-ui",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/abergwall"
   },
@@ -82,5 +82,16 @@
   "files": [
     "dist"
   ],
-  "types": "dist/index.d.ts"
+  "types": "dist/index.d.ts",
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abergwall/natlon-ui.git"
+  },
+  "author": "Anton Bergwall",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abergwall/natlon-ui/issues"
+  },
+  "homepage": "https://github.com/abergwall/natlon-ui#readme"
 }
