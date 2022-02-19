@@ -3,7 +3,7 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/abergwall"
   },
-  "version": "0.0.5",
+  "version": "0.0.6",
   "scripts": {
     "rollup": "rollup -c",
     "storybook": "start-storybook -p 6006 -s public",
@@ -73,5 +73,6 @@
   "bugs": {
     "url": "https://github.com/abergwall/natlon-ui/issues"
   },
-  "homepage": "https://github.com/abergwall/natlon-ui#readme"
+  "homepage": "https://github.com/abergwall/natlon-ui#readme",
+  "dependencies": {}
 }
