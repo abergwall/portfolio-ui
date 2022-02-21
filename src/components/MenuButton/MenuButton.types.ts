@@ -2,6 +2,7 @@ export type MenuButtonProps = {
   isSticky?: boolean;
   className?: string;
   backgroundColor?: string;
+  menuIconSize?: number;
   height?: number;
   width?: number;
 };

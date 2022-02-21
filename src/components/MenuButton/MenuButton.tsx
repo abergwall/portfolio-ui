@@ -1,27 +1,13 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { AiOutlineMenu } from "react-icons/ai";
-import {
-  IconStyleProps,
-  MenuButtonProps,
-  MenuButtonStyleProps,
-} from "./MenuButton.types";
-import {
-  iconStyles,
-  menuButtonStyles,
-  stickyContainerStyles,
-} from "./MenuButton.styles";
+import { constants } from "./MenuButton.constants";
+import { MenuButtonProps, MenuButtonStyleProps } from "./MenuButton.types";
+import { menuButtonStyles } from "./MenuButton.styles";
+import { MenuIcon, StickyWrapper } from "./components";
 
 const StyledButton = styled.button<MenuButtonStyleProps>`
-  ${(parameter) => parameter.$className ?? menuButtonStyles}
-`;
-
-const StyledIcon = styled(AiOutlineMenu)<IconStyleProps>`
-  ${iconStyles}
-`;
-
-const StyledDiv = styled.div<{ $isSticky: boolean }>`
-  ${stickyContainerStyles}
+  ${menuButtonStyles}
+  ${(parameter) => parameter.$className ?? null}
 `;
 
 const vibrateOnClick = () => {
@@ -36,9 +22,10 @@ export const MenuButton = React.forwardRef<HTMLButtonElement, MenuButtonProps>(
     {
       isSticky = false,
       className,
-      backgroundColor = "#266867",
-      height = 50,
-      width = 50,
+      backgroundColor = constants.DEFAULT_MENUBUTTON_BACKGROUND_COLOR,
+      height = constants.DEFAULT_MENUBUTTON_HEIGHT,
+      width = constants.DEFAULT_MENUBUTTON_WIDTH,
+      menuIconSize = constants.DEFAULT_MENUBUTTON_ICON_SIZE,
     },
     ref
   ) => {
@@ -48,7 +35,7 @@ export const MenuButton = React.forwardRef<HTMLButtonElement, MenuButtonProps>(
       setMenuToggled(!menuToggled);
     };
     return (
-      <StyledDiv $isSticky={isSticky}>
+      <StickyWrapper isSticky={isSticky}>
         <StyledButton
           ref={ref}
           onClick={onClick}
@@ -58,9 +45,9 @@ export const MenuButton = React.forwardRef<HTMLButtonElement, MenuButtonProps>(
           $height={height}
           $width={width}
         >
-          <StyledIcon size={30} $toggled={menuToggled} />
+          <MenuIcon size={menuIconSize} menutoggled={menuToggled} />
         </StyledButton>
-      </StyledDiv>
+      </StickyWrapper>
     );
   }
 );

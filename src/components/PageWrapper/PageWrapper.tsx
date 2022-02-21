@@ -3,12 +3,17 @@ import styled from "styled-components";
 import { pageWrapperStyles } from "./PageWrapper.styles";
 import { PageWrapperProps } from "./PageWrapper.types";
 
-const StyledDiv = styled.div`
+const StyledDiv = styled.div<{ $className?: string }>`
   ${pageWrapperStyles}
+  ${(parameter) => parameter.$className ?? null}
 `;
 
 export const PageWrapper = React.forwardRef<HTMLDivElement, PageWrapperProps>(
-  ({ children }, ref) => {
-    return <StyledDiv ref={ref}>{children}</StyledDiv>;
+  ({ children, className }, ref) => {
+    return (
+      <StyledDiv ref={ref} $className={className}>
+        {children}
+      </StyledDiv>
+    );
   }
 );
