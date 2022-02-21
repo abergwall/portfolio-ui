@@ -45,7 +45,11 @@ export const MenuButton = React.forwardRef<HTMLButtonElement, MenuButtonProps>(
           $height={height}
           $width={width}
         >
-          <MenuIcon size={menuIconSize} menutoggled={menuToggled} />
+          <MenuIcon
+            size={menuIconSize}
+            width={width}
+            menutoggled={menuToggled}
+          />
         </StyledButton>
       </StickyWrapper>
     );

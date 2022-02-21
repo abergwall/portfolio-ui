@@ -4,8 +4,8 @@ import { MenuIconStyleProps } from "./MenuIcon.types";
 export const menuIconStyles = css<MenuIconStyleProps>`
   transition: transform 400ms;
   position: absolute;
-  ${(p) =>
-    p.$menuToggled &&
-    `transform: translate(150%) rotate(720deg) ;
+  ${(parameter) =>
+    parameter.$menuToggled &&
+    `transform: translate(${parameter.$width * 3}%) rotate(720deg) ;
   `};
 `;

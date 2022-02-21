@@ -20,5 +20,5 @@ cursor: pointer;
 
 transition: width 400ms;
 
-${(p) => p.$toggled && ` width: 150px;`};
+${(parameter) => parameter.$toggled && ` width: ${parameter.$width * 3}px;`};
 `;
