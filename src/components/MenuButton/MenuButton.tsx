@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { constants } from "./MenuButton.constants";
+import {
+  DEFAULT_MENUBUTTON_BACKGROUND_COLOR,
+  DEFAULT_MENUBUTTON_HEIGHT,
+  DEFAULT_MENUBUTTON_ICON_SIZE,
+  DEFAULT_MENUBUTTON_WIDTH,
+} from "./MenuButton.constants";
 import { MenuButtonProps, MenuButtonStyleProps } from "./MenuButton.types";
 import { menuButtonStyles } from "./MenuButton.styles";
 import { MenuIcon, StickyWrapper } from "./components";
@@ -22,10 +27,10 @@ export const MenuButton = React.forwardRef<HTMLButtonElement, MenuButtonProps>(
     {
       isSticky = false,
       className,
-      backgroundColor = constants.DEFAULT_MENUBUTTON_BACKGROUND_COLOR,
-      height = constants.DEFAULT_MENUBUTTON_HEIGHT,
-      width = constants.DEFAULT_MENUBUTTON_WIDTH,
-      menuIconSize = constants.DEFAULT_MENUBUTTON_ICON_SIZE,
+      backgroundColor = DEFAULT_MENUBUTTON_BACKGROUND_COLOR,
+      height = DEFAULT_MENUBUTTON_HEIGHT,
+      width = DEFAULT_MENUBUTTON_WIDTH,
+      menuIconSize = DEFAULT_MENUBUTTON_ICON_SIZE,
     },
     ref
   ) => {

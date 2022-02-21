@@ -2,7 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import { cardStyles } from "./Card.styles";
 import { CardProps, CardStyleProps } from "./Card.types";
-import { constants } from "./Card.constants";
+import {
+  DEFAULT_CARD_BACKGROUND_COLOR,
+  DEFAULT_CARD_BORDER_COLOR,
+  DEFAULT_CARD_COLOR,
+  DEFAULT_CARD_HEIGHT,
+  DEFAULT_CARD_WIDTH,
+} from "./Card.constants";
 
 const StyledDiv = styled.div<CardStyleProps>`
   ${cardStyles}
@@ -14,11 +20,11 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
     {
       children,
       title,
-      height = constants.DEFAULT_CARD_HEIGHT,
-      width = constants.DEFAULT_CARD_WIDTH,
-      borderColor = constants.DEFAULT_CARD_BORDER_COLOR,
-      backgroundColor = constants.DEFAULT_CARD_BACKGROUND_COLOR,
-      color = constants.DEFAULT_CARD_COLOR,
+      height = DEFAULT_CARD_HEIGHT,
+      width = DEFAULT_CARD_WIDTH,
+      borderColor = DEFAULT_CARD_BORDER_COLOR,
+      backgroundColor = DEFAULT_CARD_BACKGROUND_COLOR,
+      color = DEFAULT_CARD_COLOR,
       className,
     },
     ref

@@ -3,7 +3,7 @@ import { CardStyleProps } from "./Card.types";
 
 export const cardStyles = css<CardStyleProps>`
   border-radius: 40px;
-  height: ${(parameter) => parameter.$height}px;
+  min-height: ${(parameter) => parameter.$height}px;
   width: ${(parameter) => parameter.$width}px;
   border: ${(parameter) => parameter.$borderColor};
   display: flex;
