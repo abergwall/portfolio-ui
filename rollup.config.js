@@ -15,13 +15,26 @@ export default [
         file: packageJson.main,
         format: "cjs",
         sourcemap: true,
+        exports: "auto",
+        globals: {
+          react: "React",
+          "react-dom": "ReactDOM",
+          "styled-components": "styled, css",
+        },
       },
       {
         file: packageJson.module,
         format: "esm",
         sourcemap: true,
+        exports: "auto",
+        globals: {
+          react: "React",
+          "react-dom": "ReactDOM",
+          "styled-components": "styled",
+        },
       },
     ],
+    external: ["react", "react-dom", "styled-components"],
     plugins: [
       resolve(),
       commonjs(),
@@ -33,6 +46,6 @@ export default [
     input: "dist/esm/types/index.d.ts",
     output: [{ file: "dist/index.d.ts", format: "esm" }],
     plugins: [dts()],
-    external: ["react", "react-dom"],
+    external: ["react", "react-dom", "styled-components"],
   },
 ];

@@ -3,16 +3,26 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/abergwall"
   },
-  "version": "0.0.12",
+  "version": "0.0.28",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "files": [
     "dist"
   ],
+  "types": "dist/index.d.ts",
   "author": "Anton Bergwall",
   "license": "ISC",
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abergwall/natlon-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/abergwall/natlon-ui/issues"
+  },
+  "homepage": "https://github.com/abergwall/natlon-ui#readme",
   "scripts": {
-    "rollup": "rollup -c",
+    "build": "rollup -c",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -34,17 +44,20 @@
   },
   "devDependencies": {
     "@babel/core": "^7.17.5",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@babel/preset-typescript": "^7.16.7",
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-image": "^2.1.1",
     "@rollup/plugin-node-resolve": "^13.1.3",
     "@rollup/plugin-typescript": "^8.3.0",
     "@storybook/addon-actions": "^6.4.19",
-    "@storybook/addon-essentials": "^6.4.19",
+    "@storybook/addon-essentials": "^6.1.21",
     "@storybook/addon-interactions": "^6.4.19",
     "@storybook/addon-links": "^6.4.19",
     "@storybook/builder-webpack5": "^6.4.19",
     "@storybook/manager-webpack5": "^6.4.19",
-    "@storybook/react": "^6.4.19",
+    "@storybook/react": "^6.1.21",
     "@storybook/testing-library": "0.0.9",
     "@types/styled-components": "^5.1.21",
     "babel-loader": "^8.2.3",
@@ -52,22 +65,15 @@
     "react-icons": "^4.3.1",
     "rollup": "^2.67.3",
     "rollup-plugin-dts": "^4.1.0",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-typescript2": "^0.31.2",
     "sass-loader": "^12.6.0",
-    "styled-components": "^5.3.3",
+    "ts-loader": "^9.2.6",
     "tslib": "^2.3.1",
     "typescript": "^4.5.5",
     "webpack": "^5.69.1"
   },
-  "types": "dist/index.d.ts",
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/abergwall/natlon-ui.git"
-  },
-  "bugs": {
-    "url": "https://github.com/abergwall/natlon-ui/issues"
-  },
-  "homepage": "https://github.com/abergwall/natlon-ui#readme"
+  "peerDependencies": {
+    "react": ">=17.0.2",
+    "react-dom": ">=17.0.2",
+    "styled-components": ">=5.3.3"
+  }
 }
