@@ -41,6 +41,7 @@ width: ${(parameter) => parameter.$width}px;
 height: ${(parameter) => parameter.$height}px;
 
 color: #FFFFFF;
+position: absolute;
 background-color: ${(parameter) => parameter.$backgroundColor} ;
 
 outline: none;
