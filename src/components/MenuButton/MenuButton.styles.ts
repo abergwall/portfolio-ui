@@ -4,24 +4,36 @@ import { MenuButtonStyleProps } from "./MenuButton.types";
 const openMenuAnimation = ($width: number, $height: number) => keyframes`
     0%   {
       width: ${$width}px;     
-      min-height: ${$height}px; 
+      height: ${$height}px; 
       border-radius 999em; 
     }
     50%  {
       width: ${$width * 4}px;
-      min-height: ${$height}px; 
+      height: ${$height}px; 
       border-radius: 10px;
     }
     100% {
       width: ${$width * 4}px;
-      min-height: ${$height * 5}px; 
+      height: ${$height * 5}px; 
       border-radius: 10px; 
     }
 `;
-const closeMenuAnimation = keyframes`
-    0%   {width: 200px; min-height: 250px; border-radius 10px;}
-    50%  {width: 50px; min-height: 250px; border-radius 10px; }
-    100% {width: 50px;  min-height: 50px; border-radius 999em;}
+const closeMenuAnimation = ($width: number, $height: number) => keyframes`
+    0%   {
+      width: ${$width * 4}px; 
+      height: ${$height * 5}px; 
+      border-radius 10px;
+    }
+    50%  {
+      width: ${$width}px;  
+      height:  ${$height * 5}px; 
+      border-radius 10px; 
+    }
+    100% {
+      width:  ${$width}px;  
+      height: ${$height}px; 
+      border-radius 999em;
+    }
 `;
 
 export const menuButtonStyles = css<MenuButtonStyleProps>`
@@ -56,7 +68,11 @@ ${(parameter) =>
   ${(parameter) =>
     !parameter.$toggled && parameter.$isMounted
       ? css`
-          -webkit-animation: ${closeMenuAnimation} 1s;
+          -webkit-animation: ${closeMenuAnimation(
+              parameter.$width,
+              parameter.$height
+            )}
+            1s;
           animation-fill-mode: forwards;
         `
       : null}

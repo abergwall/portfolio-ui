@@ -23,7 +23,7 @@
   "homepage": "https://github.com/abergwall/natlon-ui#readme",
   "scripts": {
     "build": "rollup -c",
-    "storybook": "start-storybook -p 6006",
+    "start": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
   "eslintConfig": {
