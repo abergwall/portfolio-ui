@@ -6,4 +6,5 @@ export {
   PageWrapper,
   MenuButton,
   RoundImage,
+  SocialRow,
 } from "./components";

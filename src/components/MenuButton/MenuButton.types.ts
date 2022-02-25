@@ -8,10 +8,7 @@ export type MenuButtonProps = {
   height?: number;
   width?: number;
   children?: React.ReactNode;
-  refs?: {
-    scrollRef: RefObject<any>;
-    styleRef?: React.ForwardedRef<HTMLDivElement>;
-  };
+  scrollToTopRef?: RefObject<any>;
 };
 
 export type MenuButtonStyleProps = {
