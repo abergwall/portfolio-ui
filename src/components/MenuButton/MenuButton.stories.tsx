@@ -14,4 +14,13 @@ const Template: ComponentStory<typeof MenuButton> = (args) => (
 
 export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-Primary.args = {};
+Primary.args = {
+  children: (
+    <>
+      <p>Link1</p>
+      <p>Link2</p>
+      <p>Link3</p>
+      <p>Link4</p>
+    </>
+  ),
+};

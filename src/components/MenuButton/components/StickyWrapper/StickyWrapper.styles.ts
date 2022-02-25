@@ -10,6 +10,7 @@ export const stickyWrapperStyles = css<StickyWrapperStyleProps>`
     position: sticky;
     display: flex;
     flex-direction: column;
+    width: 200px;
 `
       : null}
 `;
