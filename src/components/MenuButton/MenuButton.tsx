@@ -12,7 +12,7 @@ import { MenuIcon, StickyWrapper } from "./components";
 import { FaChevronUp } from "react-icons/fa";
 import { useIsMounted } from "../../hooks";
 
-const StyledButton = styled.button<MenuButtonStyleProps>`
+const StyledButton = styled.div<MenuButtonStyleProps>`
   ${menuButtonStyles}
   ${(parameter) => parameter.$className ?? null}
 `;
@@ -24,7 +24,7 @@ const openMenuKeyFrame = keyframes`
 `;
 
 const openMenuAnimation = css`
-  animation: ${openMenuKeyFrame} 1s;
+  animation: ${openMenuKeyFrame} 1500ms;
 `;
 
 const StyledDiv = styled.div<{ $height: number; $menuToggled: boolean }>`
@@ -35,6 +35,17 @@ const StyledDiv = styled.div<{ $height: number; $menuToggled: boolean }>`
   ${openMenuAnimation}
 `;
 
+const StyledButton2 = styled.button`
+  cursor: pointer;
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border-radius: 40px;
+  padding: 5px 30px 5px 30px;
+  color: #ffffff;
+  border: solid 1px;
+  ${openMenuAnimation}
+`;
+
 const vibrateOnClick = () => {
   if (!window || !window.navigator || !window.navigator.vibrate) {
     return;
@@ -42,22 +53,27 @@ const vibrateOnClick = () => {
   window.navigator.vibrate(10);
 };
 
-export const MenuButton = React.forwardRef<HTMLButtonElement, MenuButtonProps>(
-  (
-    {
-      isSticky = false,
-      className,
-      backgroundColor = DEFAULT_MENUBUTTON_BACKGROUND_COLOR,
-      height = DEFAULT_MENUBUTTON_HEIGHT,
-      width = DEFAULT_MENUBUTTON_WIDTH,
-      menuIconSize = DEFAULT_MENUBUTTON_ICON_SIZE,
-      children,
-    },
-    ref
-  ) => {
+export const MenuButton = React.forwardRef<HTMLDivElement, MenuButtonProps>(
+  ({
+    isSticky = false,
+    className,
+    backgroundColor = DEFAULT_MENUBUTTON_BACKGROUND_COLOR,
+    height = DEFAULT_MENUBUTTON_HEIGHT,
+    width = DEFAULT_MENUBUTTON_WIDTH,
+    menuIconSize = DEFAULT_MENUBUTTON_ICON_SIZE,
+    children,
+    refs,
+  }) => {
     const isMounted = useIsMounted();
     const [menuClosed, setMenuClosed] = useState<boolean>(false);
     const [menuToggled, setMenuToggled] = useState<boolean>(false);
+
+    const scrollToTop = () => {
+      vibrateOnClick();
+      if (refs && refs.scrollRef) {
+        refs.scrollRef.current.scrollIntoView({ behavior: "smooth" });
+      }
+    };
 
     const onClick = () => {
       vibrateOnClick();
@@ -68,7 +84,7 @@ export const MenuButton = React.forwardRef<HTMLButtonElement, MenuButtonProps>(
     return (
       <StickyWrapper isSticky={isSticky}>
         <StyledButton
-          ref={ref}
+          ref={refs?.styleRef ?? null}
           $className={className}
           $toggled={menuToggled}
           $isMounted={isMounted.current}
@@ -89,6 +105,7 @@ export const MenuButton = React.forwardRef<HTMLButtonElement, MenuButtonProps>(
               <StyledDiv $height={height} $menuToggled={menuToggled}>
                 {children}
               </StyledDiv>
+              <StyledButton2 onClick={scrollToTop}>Back To Top</StyledButton2>
             </>
           )}
         </StyledButton>

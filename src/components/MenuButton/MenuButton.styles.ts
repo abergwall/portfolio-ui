@@ -14,19 +14,19 @@ const openMenuAnimation = ($width: number, $height: number) => keyframes`
     }
     100% {
       width: ${$width * 4}px;
-      height: ${$height * 5}px; 
+      height: ${$height * 6}px; 
       border-radius: 10px; 
     }
 `;
 const closeMenuAnimation = ($width: number, $height: number) => keyframes`
     0%   {
       width: ${$width * 4}px; 
-      height: ${$height * 5}px; 
+      height: ${$height * 6}px; 
       border-radius 10px;
     }
     50%  {
       width: ${$width}px;  
-      height:  ${$height * 5}px; 
+      height:  ${$height * 6}px; 
       border-radius 10px; 
     }
     100% {
@@ -39,7 +39,7 @@ const closeMenuAnimation = ($width: number, $height: number) => keyframes`
 export const menuButtonStyles = css<MenuButtonStyleProps>`
 width: ${(parameter) => parameter.$width}px;
 height: ${(parameter) => parameter.$height}px;
-
+margin: 10px;
 color: #FFFFFF;
 position: absolute;
 background-color: ${(parameter) => parameter.$backgroundColor} ;

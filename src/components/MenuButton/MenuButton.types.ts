@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Ref, RefObject } from "react";
 
 export type MenuButtonProps = {
   isSticky?: boolean;
@@ -8,6 +8,10 @@ export type MenuButtonProps = {
   height?: number;
   width?: number;
   children?: React.ReactNode;
+  refs?: {
+    scrollRef: RefObject<any>;
+    styleRef?: React.ForwardedRef<HTMLDivElement>;
+  };
 };
 
 export type MenuButtonStyleProps = {
