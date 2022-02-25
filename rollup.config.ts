@@ -4,7 +4,7 @@ import typescript from "@rollup/plugin-typescript";
 import image from "@rollup/plugin-image";
 import dts from "rollup-plugin-dts";
 
-const packageJson = require("./package.json");
+import packageJson from "./package.json";
 
 export default [
   {

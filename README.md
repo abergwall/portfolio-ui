@@ -12,7 +12,7 @@ git clone git@github.com:abergwall/natlon-ui.git
 npm install
 ```
 
-3. Open the project in your preferred editor and hack away!
+3. Open the project in your preferred editor and hack away 🤙🤙🤙
 
 ## Available Scripts
 
