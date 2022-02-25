@@ -2,17 +2,17 @@
 
 1. Clone the repository with:\
 
-SSH:\
+SSH:
 
 #### `git clone git@github.com:abergwall/natlon-ui.git`
 
-or:\
+or:
 
-HTTPS:\
+HTTPS:
 
 #### `git clone https://github.com/abergwall/natlon-ui.git`
 
-2. Install the dependencies with:\
+2. Install the dependencies with:
 
 #### `npm install`
 
