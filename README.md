@@ -1,8 +1,16 @@
 ## To Contribute
 
-1. Clone the repository with SSH: `git clone git@github.com:abergwall/natlon-ui.git`
+1. Clone the repository with SSH:
 
-2. Install the dependencies with: `npm install`
+```
+git clone git@github.com:abergwall/natlon-ui.git
+```
+
+2. Install the dependencies with:
+
+```
+npm install
+```
 
 3. Open the project in your preferred editor and hack away!
 
@@ -25,3 +33,7 @@ Creates subfolders for ES modules and CommonJS modules with type declarations.
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
 Your app is ready to be deployed!
+
+```
+
+```
