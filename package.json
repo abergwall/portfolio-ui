@@ -3,7 +3,7 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/abergwall"
   },
-  "version": "0.0.38",
+  "version": "0.0.0-development",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "files": [
@@ -15,7 +15,7 @@
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/abergwall/natlon-ui.git"
+    "url": "https://github.com/abergwall/natlon-ui.git"
   },
   "bugs": {
     "url": "https://github.com/abergwall/natlon-ui/issues"
@@ -24,7 +24,8 @@
   "scripts": {
     "build": "rollup -c",
     "start": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "semantic-release": "semantic-release"
   },
   "eslintConfig": {
     "extends": [
@@ -62,10 +63,12 @@
     "@types/styled-components": "^5.1.21",
     "babel-loader": "^8.2.3",
     "babel-preset-react-app": "^10.0.1",
+    "chromatic": "^6.5.6",
     "react-icons": "^4.3.1",
     "rollup": "^2.67.3",
     "rollup-plugin-dts": "^4.1.0",
     "sass-loader": "^12.6.0",
+    "semantic-release": "^19.0.2",
     "ts-loader": "^9.2.6",
     "tslib": "^2.3.1",
     "typescript": "^4.5.5",
