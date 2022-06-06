@@ -13,8 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     name: Initialize
     steps:
-      - uses: actions/setup-node@v2
-      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v1
       - name: Install Dependencies
         run: npm ci
   publish-to-chromatic:
@@ -22,7 +22,7 @@ jobs:
     name: Publish to Chromatic
     needs: [initialize]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v1
         with:
           fetch-depth: 0
       - name: Publish to Chromatic
@@ -35,11 +35,11 @@ jobs:
     name: Semantic Release Versioning
     needs: [initialize]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v1
         with:
           fetch-depth: 0
       - name: Release
-        run: npm run semantic-release
+        run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.UI_GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
