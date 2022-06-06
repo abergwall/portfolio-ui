@@ -25,7 +25,8 @@
     "build": "rollup -c",
     "start": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "chromatic": "chromatic --exit-zero-on-changes"
   },
   "eslintConfig": {
     "extends": [
