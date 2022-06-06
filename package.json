@@ -44,6 +44,11 @@
       }
     ]
   },
+  "release": {
+    "branches": [
+      "master"
+    ]
+  },
   "devDependencies": {
     "@babel/core": "^7.17.5",
     "@babel/preset-env": "^7.16.11",
