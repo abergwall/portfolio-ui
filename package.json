@@ -18,7 +18,6 @@
     "url": "https://github.com/abergwall/portfolio-ui.git"
   },
   "scripts": {
-    "build": "rollup -c",
     "start": "start-storybook -p 6006",
     "commit": "git cz",
     "build-storybook": "build-storybook",
