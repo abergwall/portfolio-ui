@@ -3,7 +3,7 @@
 1. Clone the repository with SSH:
 
 ```
-git clone git@github.com:abergwall/natlon-ui.git
+git clone git@github.com:abergwall/portfolio-ui.git
 ```
 
 2. Install the dependencies with:

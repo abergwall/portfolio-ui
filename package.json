@@ -1,5 +1,5 @@
 {
-  "name": "@abergwall/natlon-ui",
+  "name": "@abergwall/portfolio-ui",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/abergwall"
   },
@@ -15,12 +15,8 @@
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "repository": {
     "type": "git",
-    "url": "https://github.com/abergwall/natlon-ui.git"
+    "url": "https://github.com/abergwall/portfolio-ui.git"
   },
-  "bugs": {
-    "url": "https://github.com/abergwall/natlon-ui/issues"
-  },
-  "homepage": "https://github.com/abergwall/natlon-ui#readme",
   "scripts": {
     "build": "rollup -c",
     "start": "start-storybook -p 6006",
