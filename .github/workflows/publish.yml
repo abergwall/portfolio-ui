@@ -29,7 +29,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Publish to Chromatic
-        uses: chromaui/action@v2
+        uses: chromaui/action@v1
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
 
