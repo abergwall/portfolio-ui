@@ -13,23 +13,23 @@ jobs:
     runs-on: ubuntu-latest
     name: Initialize
     steps:
-      - uses: actions/setup-node@v1
-      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v2
       - name: Install Dependencies
         run: npm ci
       - name: Set NPM token
-        run: npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
+        run: npm config set '//registry.npmjs.org/:_authToken' "${UI_GITHUB_TOKEN}"
    
   publish-to-chromatic:
     runs-on: ubuntu-latest
     name: Publish to Chromatic
     needs: [initialize]
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
         with:
           fetch-depth: 0
       - name: Publish to Chromatic
-        uses: chromaui/action@v1
+        uses: chromaui/action@v2
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
 
@@ -38,7 +38,7 @@ jobs:
     name: Semantic Release Versioning
     needs: [initialize]
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
         with:
           fetch-depth: 0
       - name: Release
