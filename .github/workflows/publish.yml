@@ -26,6 +26,7 @@ jobs:
     - run: npm test
 
   publish-to-chromatic:
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: chromaui/action@v2
         with:
@@ -33,6 +34,7 @@ jobs:
           token: ${{ secrets.UI_GITHUB_TOKEN }}
 
   semantic-release-versioning:
+    runs-on: ${{ matrix.os }}
     name: Semantic Release Versioning
     steps:
       - name: Checkout
