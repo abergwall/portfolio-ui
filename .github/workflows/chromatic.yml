@@ -1,24 +1,24 @@
-# .github/workflows/chromatic.yml
+# # .github/workflows/chromatic.yml
 
-# Workflow name
-name: "Chromatic Publish"
+# # Workflow name
+# name: "Chromatic Publish"
 
-# Event for the workflow
-on:
-  push:
-    branches:
-      - main
+# # Event for the workflow
+# on:
+#   push:
+#     branches:
+#       - main
 
-# List of jobs
-jobs:
-  publish-to-chromatic:
-    # Operating System
-    runs-on: ubuntu-latest
-    # Job steps
-    steps:
-      - uses: actions/checkout@v1
-      - run: npm install
-      - uses: chromaui/action@v1
-        with:
-          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-          token: ${{ secrets.UI_GITHUB_TOKEN }}
+# # List of jobs
+# jobs:
+#   publish-to-chromatic:
+#     # Operating System
+#     runs-on: ubuntu-latest
+#     # Job steps
+#     steps:
+#       - uses: actions/checkout@v1
+#       - run: npm install
+#       - uses: chromaui/action@v1
+#         with:
+#           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+#           token: ${{ secrets.UI_GITHUB_TOKEN }}
