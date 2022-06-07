@@ -4,7 +4,7 @@ name: Publish Package
 
 on:
   push:
-    branches: [main]
+    branches: [main, beta]
   pull_request:
 
 env:
@@ -23,5 +23,9 @@ jobs:
           node-version: "16.x"
       - name: Install
         run: npm ci
+      - name: Install semantic-release extra plugins
+        run: npm install --save-dev @semantic-release/changelog @semantic-release/git
+      - name: Build
+        run: npm run build
       - name: Release
-        run: npm semantic-release
+        run: npx semantic-release
