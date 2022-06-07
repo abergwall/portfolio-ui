@@ -33,9 +33,9 @@ jobs:
         run: npm run build
       - name: Release
         run: npx semantic-release
-          env:
-            CI: true
-            GITHUB_TOKEN: ${{ secrets.GH_PUBLISH_TOKEN }}
-            NPM_TOKEN: ${{ secrets.PORTFOLIO_UI_TOKEN }}
+        env:
+          CI: true
+          GITHUB_TOKEN: ${{ secrets.GH_PUBLISH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.PORTFOLIO_UI_TOKEN }}
       - name: Publish
         run: npm publish
