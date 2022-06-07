@@ -10,7 +10,7 @@ on:
 env:
   CI: true
   GITHUB_TOKEN: ${{ secrets.GH_PUBLISH_TOKEN }}
-  NPM_TOKEN: ${{ secrets.GH_PUBLISH_TOKEN }}
+  NPM_TOKEN: ${{ secrets.PORTFOLIO_UI_TOKEN }}
 
 jobs:
   release:
@@ -24,12 +24,14 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: "16.x"
-          registry-url: https://npm.pkg.github.com
+          registry-url: 'https://registry.npmjs.org'
       - name: Install
         run: npm ci
       - name: Install semantic-release extra plugins
         run: npm install --save-dev @semantic-release/changelog @semantic-release/git
       - name: Build
         run: npm run build
+      - name: Release
+        run: npx semantic-release
       - name: Publish
         run: npm publish
