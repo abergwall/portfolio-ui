@@ -12,7 +12,7 @@
   ],
   "types": "dist/index.d.ts",
   "author": "Anton Bergwall",
-  "license": "ISC",
+  "license": "MIT",
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "repository": {
     "type": "git",
@@ -22,7 +22,7 @@
     "start": "start-storybook -p 6006",
     "commit": "git cz",
     "build-storybook": "build-storybook",
-    "semantic-release": "semantic-release --branches main",
+    "semantic-release": "semantic-release",
     "chromatic": "chromatic --exit-zero-on-changes"
   },
   "eslintConfig": {

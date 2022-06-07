@@ -6,7 +6,11 @@ on:
   push:
     branches: [main]
   pull_request:
-    branches: "*"
+
+env:
+  CI: true
+  GITHUB_TOKEN: ${{ secrets.GH_PUBLISH_TOKEN }}
+  NPM_TOKEN: ${{ secrets.PORTFOLIO_UI_TOKEN }}
 
 jobs:
   release:
@@ -17,10 +21,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: "16.x"
-      - run: npm ci
-      - run: npm run build --if-present
-      - run: npm publish
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_PUBLISH_TOKEN }}
-          GH_TOKEN: ${{ secrets.GH_PUBLISH_TOKEN }}
-          NPM_TOKEN: ${{ secrets.PORTFOLIO_UI_TOKEN }}
+      - name: Install
+        run: npm ci
+      - name: Release
+        run: npm semantic-release
