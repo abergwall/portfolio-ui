@@ -1,7 +1,7 @@
 {
   "name": "@abergwall/portfolio-ui",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/abergwall",
+    "registry": "https://npm.pkg.github.com",
     "tag": "latest"
   },
   "version": "0.0.0-semantic-release",
