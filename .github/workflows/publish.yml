@@ -10,7 +10,7 @@ on:
 env:
   CI: true
   GITHUB_TOKEN: ${{ secrets.GH_PUBLISH_TOKEN }}
-  NPM_TOKEN: ${{ secrets.PORTFOLIO_UI_TOKEN }}
+  NPM_TOKEN: ${{ secrets.GH_PUBLISH_TOKEN }}
 
 jobs:
   release:
