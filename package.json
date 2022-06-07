@@ -20,6 +20,7 @@
   },
   "scripts": {
     "start": "start-storybook -p 6006",
+    "build": "rollup -c",
     "commit": "git cz",
     "build-storybook": "build-storybook",
     "semantic-release": "semantic-release",
