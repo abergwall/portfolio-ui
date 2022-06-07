@@ -19,7 +19,7 @@ jobs:
           node-version: "16.x"
       - run: npm ci
       - run: npm run build --if-present
-      - run: npx semantic-release
+      - run: npm publish
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PUBLISH_TOKEN }}
           NPM_TOKEN: ${{ secrets.PORTFOLIO_UI_TOKEN }}
