@@ -24,4 +24,4 @@ jobs:
       - name: Install
         run: npm ci
       - name: Release
-        run: npm semantic-release
+        run: npm run semantic-release
